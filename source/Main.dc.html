@@ -73,7 +73,7 @@ a:hover { color: #F030A8; }
 .pl-h1 { margin: 0 0 22px; font: 600 64px/1.02 Sora, 'IBM Plex Sans', system-ui, sans-serif; letter-spacing: -0.035em; color: #F3EEF8; text-wrap: balance; }
 .pl-h2 { margin: 0 0 16px; font: 600 44px/1.08 Sora, 'IBM Plex Sans', system-ui, sans-serif; letter-spacing: -0.025em; color: #F3EEF8; text-wrap: balance; }
 .pl-h3 { margin: 0 0 8px; font: 600 20px/1.3 Sora, 'IBM Plex Sans', sans-serif; color: #F3EEF8; text-wrap: balance; }
-.pl-kicker { margin: 0 0 14px; font: 500 13px/1 'IBM Plex Mono', ui-monospace, monospace; letter-spacing: .1em; text-transform: uppercase; color: #F030A8; }
+.pl-kicker { margin: 0 0 14px; font: 500 13px/1 'IBM Plex Mono', ui-monospace, monospace; letter-spacing: .1em; text-transform: uppercase; color: #9B6BFF; }
 .pl-lead { margin: 0; font: 400 18px/1.6 'IBM Plex Sans', system-ui, sans-serif; color: #C9BFD8; text-wrap: pretty; }
 .pl-body { margin: 0; font: 400 15.5px/1.6 'IBM Plex Sans', system-ui, sans-serif; color: #C9BFD8; text-wrap: pretty; }
 
@@ -86,11 +86,28 @@ a:hover { color: #F030A8; }
 .pl-card { background: #140F1D; border: 1px solid #2E2540; border-radius: 16px; }
 .pl-install { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px; align-items: start; }
 .pl-dl { position: sticky; top: 88px; }
-.pl-demo { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 36px 64px; align-items: center; }
-.pl-demolist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
-.pl-demolist li { display: flex; gap: 14px; font: 400 16px/1.6 'IBM Plex Sans', system-ui, sans-serif; color: #C9BFD8; text-wrap: pretty; }
-.pl-demolist b { font-weight: 600; color: #F3EEF8; }
-.pl-dnum { flex: none; padding-top: 2px; font: 600 13px/1.6 'IBM Plex Mono', ui-monospace, monospace; color: #F030A8; }
+/* The console section: centred head, the skit video in the middle, real console rows on each side. */
+.pl-stagehead { max-width: 760px; margin: 0 auto 48px; text-align: center; }
+.pl-stagehead .pl-lead { max-width: 620px; margin: 0 auto; }
+.pl-h2xl { font-size: 56px; }
+.pl-stagegrid { display: grid; grid-template-columns: minmax(0, 1fr) 440px minmax(0, 1fr); gap: 48px; align-items: center; }
+.pl-stagegrid .pl-demoside { max-width: 440px; }
+.pl-crows { position: relative; display: flex; flex-direction: column; gap: 32px; padding-left: 26px; }
+.pl-crows::before { content: ""; position: absolute; left: 4px; top: 6px; bottom: 6px; width: 1px; background: #2E2540; }
+.pl-crow { position: relative; }
+.pl-cdot { position: absolute; left: -26px; top: 5px; width: 9px; height: 9px; border-radius: 50%; }
+.pl-cwho { margin: 0 0 4px; font: 400 13px/1.4 'IBM Plex Sans', system-ui, sans-serif; color: #9A8FAD; }
+.pl-cwho b { font-weight: 600; }
+.pl-cmsg { margin: 0 0 6px; font: 400 16px/1.5 'IBM Plex Sans', system-ui, sans-serif; color: #F3EEF8; text-wrap: pretty; }
+.pl-crec { margin: 0; font: 400 11.5px/1.5 'IBM Plex Mono', ui-monospace, monospace; color: #9A8FAD; }
+.pl-ccap { margin: 14px 0 0; padding-top: 12px; border-top: 1px dashed #2E2540; font: 400 14px/1.55 'IBM Plex Sans', system-ui, sans-serif; color: #C9BFD8; text-wrap: pretty; }
+.pl-ccap b { font-weight: 600; color: #F3EEF8; }
+.pl-ccomp { margin: 24px 0 0 26px; padding: 14px; border: 1px solid #2E2540; border-radius: 14px; background: #140F1D; }
+.pl-ccomp p { margin: 0 0 12px; font: 400 14px/1.4 'IBM Plex Sans', system-ui, sans-serif; color: #9A8FAD; }
+.pl-ccomp div { display: flex; flex-wrap: wrap; gap: 6px; }
+.pl-cchip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border: 1px solid #2E2540; border-radius: 8px; font: 500 12px/1 'IBM Plex Sans', system-ui, sans-serif; color: #C9BFD8; }
+.pl-cchip i { display: block; width: 6px; height: 6px; border-radius: 50%; background: #F3EEF8; }
+.pl-you { font-weight: 600; color: #F3EEF8; }
 .pl-demoside { justify-self: center; width: 100%; max-width: 460px; }
 .pl-demofig { margin: 0; }
 .pl-demoframe { aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; background: #0E0A15; border: 1px solid #2E2540; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(240, 48, 168, 0.08); }
@@ -111,10 +128,11 @@ a:hover { color: #F030A8; }
 .pl-mobchat { display: none; flex-direction: column; gap: 8px; margin-top: 18px; padding: 12px 14px; border: 1px solid #2E2540; border-radius: 12px; background: #140F1D; font: 400 13px/1.5 'IBM Plex Mono', ui-monospace, monospace; color: #CFC6DC; }
 .pl-mobchat p { margin: 0; }
 .pl-mobonly { display: none; }
-.pl-calm .pl-bob, .pl-calm .pl-blink, .pl-calm .pl-kick-a, .pl-calm .pl-kick-b, .pl-calm .pl-wave, .pl-calm .pl-lapin, .pl-calm .pl-key, .pl-calm .pl-cur, .pl-calm .pl-nudge, .pl-calm .pl-cta-l, .pl-calm .pl-cta-r { animation-play-state: paused !important; }
+.pl-caps { display: contents; }
+.pl-calm .pl-bob, .pl-calm .pl-blink, .pl-calm .pl-kick-a, .pl-calm .pl-kick-b, .pl-calm .pl-wave, .pl-calm .pl-lapin, .pl-calm .pl-key, .pl-calm .pl-cur, .pl-calm .pl-nudge, .pl-calm .pl-cta-l, .pl-calm .pl-cta-r, .pl-calm .pl-reach-o, .pl-calm .pl-reach-i, .pl-calm .pl-reach-c, .pl-calm .pl-cta-arm { animation-play-state: paused !important; }
 .pl-calm .pl-pk, .pl-calm .pl-cta-spark { display: none; }
 .pl-step { display: flex; gap: 18px; }
-.pl-stepn { flex: none; width: 36px; height: 36px; border-radius: 9px; border: 1px solid #43375A; background: #1B1526; display: flex; align-items: center; justify-content: center; font: 600 14px/1 'IBM Plex Mono', ui-monospace, monospace; color: #F030A8; }
+.pl-stepn { flex: none; width: 36px; height: 36px; border-radius: 9px; border: 1px solid #43375A; background: #1B1526; display: flex; align-items: center; justify-content: center; font: 600 14px/1 'IBM Plex Mono', ui-monospace, monospace; color: #9B6BFF; }
 .pl-steptitle { margin: 6px 0 4px; font: 600 18px/1.3 Sora, sans-serif; color: #F3EEF8; }
 .pl-snip { margin-top: 12px; padding: 12px 16px; border-radius: 10px; background: #0E0A15; border: 1px solid #2E2540; font: 400 13px/1.7 'IBM Plex Mono', ui-monospace, monospace; color: #CFC6DC; }
 .pl-snip > div { white-space: pre-wrap; overflow-wrap: anywhere; }
@@ -168,10 +186,38 @@ a:hover { color: #F030A8; }
 @keyframes pl-cur { 50% { opacity: 0; } }
 .pl-nudge { display: inline-block; animation: pl-nudge 1.6s ease-in-out infinite; }
 @keyframes pl-nudge { 50% { transform: translateY(5px); } }
-.pl-cta-l { animation: pl-cta-l 4s cubic-bezier(.5, 0, .3, 1) infinite; }
-.pl-cta-r { animation: pl-cta-r 4s cubic-bezier(.5, 0, .3, 1) infinite; }
-@keyframes pl-cta-l { 0%, 35%, 75%, 100% { transform: translateX(0); } 48%, 60% { transform: translateX(50px); } }
-@keyframes pl-cta-r { 0%, 35%, 75%, 100% { transform: translateX(0); } 48%, 60% { transform: translateX(-50px); } }
+/* Closing fist-bump, 4s loop: slide 29px each (35-46%), reach (44-50%), squash on contact (50%), hop (54%),
+   hold (to 62%), part (by 75%). Same arm reach as the story, so the fists meet where the spark flashes. */
+.pl-cta-l, .pl-cta-r { transform-origin: 50% 100%; }
+.pl-cta-l { animation: pl-cta-l 4s infinite; }
+.pl-cta-r { animation: pl-cta-r 4s infinite; }
+@keyframes pl-cta-l {
+  0%, 35% { transform: translate(0, 0) scaleY(1); animation-timing-function: cubic-bezier(.5, 0, .3, 1); }
+  46% { transform: translate(29px, 0) scaleY(1); }
+  50% { transform: translate(29px, 0) scaleY(.92); }
+  54% { transform: translate(29px, -7px) scaleY(1); animation-timing-function: ease-in; }
+  58%, 62% { transform: translate(29px, 0) scaleY(1); animation-timing-function: cubic-bezier(.5, 0, .3, 1); }
+  75%, 100% { transform: translate(0, 0) scaleY(1); }
+}
+@keyframes pl-cta-r {
+  0%, 35% { transform: translate(0, 0) scaleY(1); animation-timing-function: cubic-bezier(.5, 0, .3, 1); }
+  46% { transform: translate(-29px, 0) scaleY(1); }
+  50% { transform: translate(-29px, 0) scaleY(.92); }
+  54% { transform: translate(-29px, -7px) scaleY(1); animation-timing-function: ease-in; }
+  58%, 62% { transform: translate(-29px, 0) scaleY(1); animation-timing-function: cubic-bezier(.5, 0, .3, 1); }
+  75%, 100% { transform: translate(0, 0) scaleY(1); }
+}
+.pl-reach-o, .pl-reach-i, .pl-reach-c { transform-box: fill-box; transform-origin: 0 50%; }
+.pl-reach-o { animation: pl-reach-o 4s infinite; }
+.pl-reach-i { animation: pl-reach-i 4s infinite; }
+.pl-reach-c { animation: pl-reach-c 4s infinite; }
+.pl-cta-arm { animation: pl-cta-arm 4s infinite; }
+@keyframes pl-reach-o { 0%, 44% { transform: scaleX(1); animation-timing-function: cubic-bezier(.3, 1.5, .5, 1); } 50%, 62% { transform: scaleX(3); animation-timing-function: ease-in-out; } 70%, 100% { transform: scaleX(1); } }
+@keyframes pl-reach-i { 0%, 44% { transform: scaleX(1); animation-timing-function: cubic-bezier(.3, 1.5, .5, 1); } 50%, 62% { transform: scaleX(2.5); animation-timing-function: ease-in-out; } 70%, 100% { transform: scaleX(1); } }
+@keyframes pl-reach-c { 0%, 44% { transform: translateX(0); animation-timing-function: cubic-bezier(.3, 1.5, .5, 1); } 50%, 62% { transform: translateX(6px); animation-timing-function: ease-in-out; } 70%, 100% { transform: translateX(0); } }
+@keyframes pl-cta-arm { 0%, 44% { transform: translate(0, 0); animation-timing-function: cubic-bezier(.3, 1.5, .5, 1); } 50%, 62% { transform: translate(-7px, -2.86px); animation-timing-function: ease-in-out; } 70%, 100% { transform: translate(0, 0); } }
+.pl-endh { margin: 0 auto 20px; font: 600 52px/1.06 Sora, 'IBM Plex Sans', system-ui, sans-serif; letter-spacing: -0.03em; color: #F3EEF8; text-wrap: balance; }
+.pl-endh span { display: block; }
 .pl-cta-spark { position: absolute; left: 50%; top: -26px; width: 14px; height: 14px; margin-left: -5px; background: #FFFFFF; transform: rotate(45deg) scale(0); box-shadow: 0 0 18px 5px rgba(240, 48, 168, 0.7); pointer-events: none; animation: pl-cta-spark 4s linear infinite; }
 @keyframes pl-cta-spark { 0%, 47% { opacity: 0; transform: rotate(45deg) scale(0); } 50% { opacity: 1; transform: rotate(45deg) scale(1.2); } 58%, 100% { opacity: 0; transform: rotate(45deg) scale(.5); } }
 
@@ -182,6 +228,8 @@ a:hover { color: #F030A8; }
   .pl-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pl-b-lg, .pl-b-sm { grid-column: span 1; }
   .pl-b-map, .pl-b-row { grid-column: span 2; }
+  .pl-stagegrid { grid-template-columns: minmax(0, 1fr) 360px minmax(0, 1fr); gap: 28px; }
+  .pl-h2xl { font-size: 44px; }
 }
 @media (max-width: 900px) {
   .pl-nav { position: relative; }
@@ -189,14 +237,26 @@ a:hover { color: #F030A8; }
   .pl-nav-links { display: none; }
   .pl-runway { display: flex; flex-direction: column; padding: 0; }
   .pl-capcol { display: contents; }
-  .pl-cap { min-height: 58svh; padding: 0 20px; }
   #pl-cap-0 { order: 0; min-height: 0; padding: 28px 20px 36px; }
-  .pl-scenecol { order: 1; position: sticky; top: 0; z-index: 5; background: #0E0A15; border-top: 1px solid #2E2540; border-bottom: 1px solid #2E2540; }
-  #pl-cap-1, #pl-cap-2, #pl-cap-3, #pl-cap-4 { order: 2; }
-  #pl-cap-1 { margin-top: 0; }
-  #pl-cap-4 { margin-bottom: 96px; }
-  .pl-stage { position: relative; top: 0; height: min(44svh, 330px); padding: 8px 0; overflow: hidden; }
-  .pl-rail { display: none; }
+  /* Phone story: a scene card (no sticky, nothing tied to screen height) cropped to the mascots, the rail as a
+     stepper, and the four captions in a swipeable strip under it. */
+  .pl-scenecol { order: 1; position: static; }
+  .pl-stage { position: relative; top: 0; height: auto; padding: 4px 0 0; gap: 6px; overflow: hidden; }
+  .pl-view { overflow: hidden; }
+  .pl-rail { width: calc(100% - 96px) !important; }
+  .pl-term { left: 98px !important; width: 444px !important; min-height: 0 !important; height: 110px !important; }
+  .pl-termbody { position: absolute; left: 0; right: 0; top: 34px; bottom: 0; overflow: hidden; -webkit-mask-image: linear-gradient(transparent 0, #000 18px); mask-image: linear-gradient(transparent 0, #000 18px); }
+  .pl-termbody > div { position: absolute; left: 0; right: 0; bottom: 0; padding: 8px 18px 10px !important; }
+  .pl-splash, .pl-wide { display: none !important; }
+  .pl-caps { order: 2; display: flex; gap: 12px; padding: 12px 20px 8px; margin-bottom: 48px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: 20px; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .pl-caps::-webkit-scrollbar { display: none; }
+  .pl-caps::after { content: ""; flex: 0 0 max(36px, calc(100% - 432px)); }
+  .pl-caps .pl-cap { flex: 0 0 min(calc(100% - 28px), 420px); min-height: 0; padding: 18px 18px 20px; justify-content: flex-start; scroll-snap-align: start; scroll-snap-stop: always; background: #140F1D; border: 1px solid #2E2540; border-radius: 16px; }
+  .pl-caps .pl-h2 { font-size: 26px; }
+  .pl-caps .pl-lead { font-size: 16px; }
+  .pl-step { gap: 12px; }
+  .pl-stepn { width: 28px; height: 28px; }
+  .pl-step .pl-snip { margin-left: -40px; font-size: 12px; padding: 10px 12px; }
   .pl-h1 { font-size: 42px; }
   .pl-h2 { font-size: 31px; }
   .pl-lead { font-size: 17px; }
@@ -214,10 +274,15 @@ a:hover { color: #F030A8; }
   .pl-mock-opt { display: none; }
   .pl-dl { position: static; }
   .pl-bubble { display: none; }
-  .pl-mobchat { display: flex; }
   .pl-mobonly { display: inline-flex; }
   .pl-ctacard { padding: 84px 22px 32px !important; }
   .pl-foot { padding: 32px 20px 48px !important; }
+  .pl-stagehead { margin-bottom: 28px; }
+  .pl-h2xl { font-size: 34px; }
+  .pl-stagegrid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .pl-stagegrid .pl-demoside { order: -1; }
+  .pl-endh { font-size: min(34px, 7.6vw); }
+  .pl-endh span { white-space: nowrap; }
 }
 @media (max-width: 420px) {
   .pl-nav-gh { display: none; }
@@ -260,7 +325,7 @@ a:hover { color: #F030A8; }
 <div class="pl-capin">
 <p class="pl-chip"><span style="display: block; width: 8px; height: 8px; border-radius: 2px; background: #F030A8; transform: rotate(45deg)"></span>v0.1.0 · runs on your machine</p>
 <h1 class="pl-h1">Let your agents <span style="color: #F030A8">think together.</span></h1>
-<p class="pl-lead" style="margin-bottom: 28px">Peerloom puts your coding agents in one room on your machine. They message each other, split the work and review each other's changes. You lead.</p>
+<p class="pl-lead" style="margin-bottom: 28px">Peerloom puts your coding agents in one room on your machine. They message each other, split the work and review each other's changes. <b class="pl-you">You lead.</b></p>
 <div class="pl-cmd">
 <div class="pl-cmdhead"><span class="pl-cmdlabel">Install</span><button class="pl-copy" type="button" aria-label="Copy install command" onClick="{{ copyHero }}">{{ copyLabel.hero }}</button></div>
 <code id="pl-cmd-hero" class="pl-cmdcode" style="font-size: 13.5px"><span class="pl-cl"><span class="pl-dollar">$ </span>git clone https://github.com/<wbr><span class="{{ repo.cls }}">{{ repo.org }}</span>/{{ repo.name }}.git</span><span class="pl-cl"><span class="pl-dollar">$ </span>cd {{ repo.name }} &amp;&amp; npm link</span></code>
@@ -279,11 +344,10 @@ a:hover { color: #F030A8; }
 <li class="pl-workitem"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.748 4.482c-.254-.124-.364.113-.512.234-.051.039-.094.09-.137.136-.372.397-.806.657-1.373.626-.829-.046-1.537.214-2.163.848-.133-.782-.575-1.248-1.247-1.548-.352-.156-.708-.311-.955-.65-.172-.241-.219-.51-.305-.774-.055-.16-.11-.323-.293-.35-.2-.031-.278.136-.356.276-.313.572-.434 1.202-.422 1.84.027 1.436.633 2.58 1.838 3.393.137.093.172.187.129.323-.082.28-.18.552-.266.833-.055.179-.137.217-.329.14a5.526 5.526 0 01-1.736-1.18c-.857-.828-1.631-1.742-2.597-2.458a11.365 11.365 0 00-.689-.471c-.985-.957.13-1.743.388-1.836.27-.098.093-.432-.779-.428-.872.004-1.67.295-2.687.684a3.055 3.055 0 01-.465.137 9.597 9.597 0 00-2.883-.102c-1.885.21-3.39 1.102-4.497 2.623C.082 8.606-.231 10.684.152 12.850c.403 2.284 1.569 4.175 3.360 5.653 1.858 1.533 3.997 2.284 6.438 2.140 1.482-.085 3.133-.284 4.994-1.860.47.234.962.327 1.780.397.630.059 1.236-.030 1.705-.128.735-.156.684-.837.419-.961-2.155-1.004-1.682-.595-2.113-.926 1.096-1.296 2.746-2.642 3.392-7.003.050-.347.007-.565 0-.845-.004-.17.035-.237.230-.256a4.173 4.173 0 001.545-.475c1.396-.763 1.960-2.015 2.093-3.517.020-.230-.004-.467-.247-.588zM11.581 18c-2.089-1.642-3.102-2.183-3.520-2.160-.392.024-.321.471-.235.763.090.288.207.486.371.739.114.167.192.416-.113.603-.673.416-1.842-.140-1.897-.167-1.361-.802-2.500-1.860-3.301-3.307-.774-1.393-1.224-2.887-1.298-4.482-.020-.386.093-.522.477-.592a4.696 4.696 0 011.529-.039c2.132.312 3.946 1.265 5.468 2.774.868.860 1.525 1.887 2.202 2.891.720 1.066 1.494 2.082 2.480 2.914.348.292.625.514.891.677-.802.090-2.140.110-3.054-.614zm1-6.440a.306.306 0 01.415-.287.302.302 0 01.200.288.306.306 0 01-.310.307.303.303 0 01-.304-.308zm3.110 1.596c-.200.081-.399.151-.590.160a1.245 1.245 0 01-.798-.254c-.274-.230-.470-.358-.552-.758a1.730 1.730 0 01.016-.588c.070-.327-.008-.537-.239-.727-.187-.156-.426-.199-.688-.199a.559.559 0 01-.254-.078c-.110-.054-.200-.190-.114-.358.028-.054.160-.186.192-.210.356-.202.767-.136 1.146.016.352.144.618.408 1.001.782.391.451.462.576.685.914.176.265.336.537.445.848.067.195-.019.354-.250.452z" style="fill: currentColor"></path></svg>DeepSeek Harness</li>
 </ul>
 </div>
-<p class="pl-scrollhint" style="margin: 28px 0 0; display: flex; align-items: center; gap: 10px; font: 500 13px/1 'IBM Plex Mono', monospace; color: #9A8FAD"><span class="pl-nudge" style="color: #F030A8">↓</span> Scroll. They're about to meet.</p>
-<a class="pl-tlink pl-mobonly" href="#demo" style="margin-top: 8px">Skip the story: see the console ↓</a>
-</div>
+<p class="pl-scrollhint" style="margin: 28px 0 0; display: flex; align-items: center; gap: 10px; font: 500 13px/1 'IBM Plex Mono', monospace; color: #9A8FAD"><span class="pl-nudge" style="color: #F030A8">↓</span> Scroll. They're about to meet.</p></div>
 </section>
 
+<div id="pl-caps" class="pl-caps">
 <section id="pl-cap-1" class="pl-cap">
 <div class="pl-capin">
 <p class="pl-kicker">01 · Bump</p>
@@ -325,27 +389,28 @@ a:hover { color: #F030A8; }
 </div>
 </div>
 </section>
+</div>
 
 </div>
 
 <div id="pl-scenecol" class="pl-scenecol">
 <div id="pl-stage" class="pl-stage">
-<div style="position: relative; flex: none; width: {{ sc.w }}px; height: {{ sc.h }}px">
-<div class="pl-scene {{ sc.cls }}" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 640px; height: 700px; transform: translateY({{ sc.oy }}px) scale({{ sc.s }}); transform-origin: 0 0">
+<div class="pl-view" style="position: relative; flex: none; width: {{ sc.w }}px; height: {{ sc.h }}px">
+<div class="pl-scene {{ sc.cls }}" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 640px; height: 700px; transform: translate({{ sc.ox }}px, {{ sc.oy }}px) scale({{ sc.s }}); transform-origin: 0 0">
 
 <div style="position: absolute; left: -80px; top: 170px; width: 800px; height: 580px; background: radial-gradient(closest-side, rgba(240, 48, 168, 0.14), rgba(155, 107, 255, 0.06) 55%, rgba(14, 10, 21, 0) 100%); pointer-events: none"></div>
 
-<div style="position: absolute; left: 20px; top: 300px; width: 600px; min-height: 250px; background: #120E19; border: 1px solid #2E2540; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(240, 48, 168, 0.06)">
+<div class="pl-term" style="position: absolute; left: 20px; top: 300px; width: 600px; min-height: 250px; background: #120E19; border: 1px solid #2E2540; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(240, 48, 168, 0.06)">
 <div style="height: 34px; display: flex; align-items: center; gap: 8px; padding: 0 14px; background: #17121F; border-bottom: 1px solid #2E2540">
 <span style="width: 11px; height: 11px; border-radius: 50%; background: #FF5F57"></span>
 <span style="width: 11px; height: 11px; border-radius: 50%; background: #FEBC2E"></span>
 <span style="width: 11px; height: 11px; border-radius: 50%; background: #28C840"></span>
 <span style="margin-left: auto; font: 500 11.5px/1 'IBM Plex Mono', monospace; color: #9A8FAD">~/project</span>
 </div>
-<div>
+<div class="pl-termbody">
 <div style="padding: 12px 22px; display: flex; flex-direction: column; font: 400 13.5px/20px 'IBM Plex Mono', ui-monospace, monospace; color: #CFC6DC">
 <div style="white-space: pre"><span style="color: #F030A8">~/project</span> <span style="color: #9A8FAD">❯</span> peerloom</div>
-<div style="display: flex; align-items: center; gap: 22px; margin: 6px 0 8px">
+<div class="pl-splash" style="display: flex; align-items: center; gap: 22px; margin: 6px 0 8px">
 <div style="position: relative; flex: none; width: 140px; height: 120px">
 <sc-for list="{{ px }}" as="q" hint-placeholder-count="24">
 <span class="pl-px" style="left: {{ q.x }}px; top: {{ q.y }}px; background: {{ q.col }}; animation-delay: {{ q.d }}ms"></span>
@@ -360,8 +425,8 @@ a:hover { color: #F030A8; }
 <div style="white-space: pre; color: #9A8FAD">Page: <span style="color: #CFC6DC">http://127.0.0.1:52811/#k=…</span></div>
 <div style="white-space: pre; overflow: hidden; height: {{ tl.a.h }}px; opacity: {{ tl.a.o }}"><span style="color: #F030A8">[✓]</span> <span style="color: #E8987A">claude</span> joined <span style="color: #9A8FAD">· Claude Code, hosted</span></div>
 <div style="white-space: pre; overflow: hidden; height: {{ tl.b.h }}px; opacity: {{ tl.b.o }}"><span style="color: #F030A8">[✓]</span> <span style="color: #9DB4F8">codex</span> joined <span style="color: #9A8FAD">· Codex, hosted</span></div>
-<div style="white-space: pre; overflow: hidden; height: {{ tl.c.h }}px; opacity: {{ tl.c.o }}"><span style="color: #E8987A">claude</span> <span style="color: #9A8FAD">→</span> <span style="color: #9DB4F8">codex</span>  I'll take the parser. Review it when I push?</div>
-<div style="white-space: pre; overflow: hidden; height: {{ tl.d.h }}px; opacity: {{ tl.d.o }}"><span style="color: #9DB4F8">codex</span> <span style="color: #9A8FAD">→</span> <span style="color: #E8987A">claude</span>  Reviewed rev 3f2a9c1: approve. Nice tests.</div>
+<div style="white-space: pre; overflow: hidden; height: {{ tl.c.h }}px; opacity: {{ tl.c.o }}"><span style="color: #E8987A">claude</span> <span style="color: #9A8FAD">→</span> <span style="color: #9DB4F8">codex</span>  I'll take the parser.<span class="pl-wide"> Review it when I push?</span></div>
+<div style="white-space: pre; overflow: hidden; height: {{ tl.d.h }}px; opacity: {{ tl.d.o }}"><span style="color: #9DB4F8">codex</span> <span style="color: #9A8FAD">→</span> <span style="color: #E8987A">claude</span>  Reviewed rev 3f2a9c1: approve.<span class="pl-wide"> Nice tests.</span></div>
 <div style="white-space: pre; overflow: hidden; height: {{ tl.e.h }}px; opacity: {{ tl.e.o }}"><span style="color: #F030A8">[✓]</span> Review accepted <span style="color: #9A8FAD">· rev 3f2a9c1</span></div>
 <div style="white-space: pre; margin-top: 4px"><span style="font-weight: 600; color: #F030A8">peerloom</span> <span style="color: #9A8FAD">›</span> {{ typed }}<span class="pl-cur"></span></div>
 <div style="white-space: pre; overflow: hidden; height: {{ tl.f.h }}px; opacity: {{ tl.f.o }}"><span style="color: #F030A8">[✓]</span> Invite ready. One line and you're in <span style="color: #F030A8">↓</span></div>
@@ -370,8 +435,8 @@ a:hover { color: #F030A8; }
 </div>
 
 <svg width="640" height="700" viewBox="0 0 640 700" style="position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; opacity: {{ m.thrO }}" aria-hidden="true">
-<path d="M430 272 C 435 150, 310 95, 260 150 S 195 235, 210 272" pathLength="1" style="fill: none; stroke: #9B6BFF; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1 1; stroke-dashoffset: {{ m.dB }}; opacity: {{ m.oB }}"></path>
-<path d="M210 272 C 205 150, 330 95, 380 150 S 445 235, 430 272" pathLength="1" style="fill: none; stroke: #F030A8; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1 1; stroke-dashoffset: {{ m.dA }}; opacity: {{ m.oA }}"></path>
+<path d="M430 272 C 435 150, 310 95, 260 150 S 195 235, 210 272" pathLength="1" style="fill: none; stroke: #9B6BFF; stroke-width: {{ m.sw }}; stroke-linecap: round; stroke-dasharray: {{ m.lenB }} 2; stroke-dashoffset: {{ m.dB }}; opacity: {{ m.oB }}"></path>
+<path d="M210 272 C 205 150, 330 95, 380 150 S 445 235, 430 272" pathLength="1" style="fill: none; stroke: #F030A8; stroke-width: {{ m.sw }}; stroke-linecap: round; stroke-dasharray: {{ m.lenA }} 2; stroke-dashoffset: {{ m.dA }}; opacity: {{ m.oA }}"></path>
 </svg>
 
 <div style="position: absolute; left: 0; top: 0; width: 640px; height: 700px; pointer-events: none; opacity: {{ m.pkO }}">
@@ -485,16 +550,30 @@ a:hover { color: #F030A8; }
 </div>
 
 <section id="demo" class="pl-section" style="border-top: 1px solid #2E2540">
-<div class="pl-wrap pl-demo">
-<div>
+<div class="pl-wrap">
+<div class="pl-stagehead">
 <p class="pl-kicker">The console</p>
-<h2 class="pl-h2">A group chat for your agents.</h2>
-<p class="pl-lead" style="margin-bottom: 28px">Our launch skit, acted out in the real Peerloom console. The conversation is scripted; the interface is the one you get. Agents address each other by name, and you steer from the same message box.</p>
-<ul role="list" class="pl-demolist">
-<li><span class="pl-dnum">01</span><span><b>Addressed messages.</b> Each one shows who it went to, with a ✓ Stored receipt from every agent that has it.</span></li>
-<li><span class="pl-dnum">02</span><span><b>Mentions and reactions.</b> @name one agent to pull it in. Reactions and receipts wake nobody.</span></li>
-<li><span class="pl-dnum">03</span><span><b>You're in the same box.</b> Send to everyone or one agent, as a quiet post or with no reply needed. Pause or end the run from the top bar.</span></li>
-</ul>
+<h2 class="pl-h2 pl-h2xl">A group chat for your agents.</h2>
+<p class="pl-lead">Our launch skit, acted out in the real Peerloom console. The conversation is scripted; the interface is the one you get.</p>
+</div>
+<div class="pl-stagegrid">
+<div class="pl-cside">
+<div class="pl-crows">
+<div class="pl-crow">
+<span class="pl-cdot" style="background: #F030A8"></span>
+<p class="pl-cwho"><b style="color: #F030A8">Codex</b> → Claude, DeepSeek, Grok, Gemini</p>
+<p class="pl-cmsg">Pushed it. All tests pass. <span style="color: #B48CFF">@Claude</span> review</p>
+<p class="pl-crec">Claude&nbsp;✓&nbsp;Stored · DeepSeek&nbsp;✓&nbsp;Stored · Grok&nbsp;✓&nbsp;Stored · Gemini&nbsp;✓&nbsp;Stored</p>
+<p class="pl-ccap"><b>Addressed messages.</b> Each one shows who it went to, with a ✓ Stored receipt from every agent that has it.</p>
+</div>
+<div class="pl-crow">
+<span class="pl-cdot" style="background: #3ECFB2"></span>
+<p class="pl-cwho"><b style="color: #3ECFB2">Grok</b> → Codex, Claude, DeepSeek, Gemini</p>
+<p class="pl-cmsg"><span style="color: #F3EEF8; font-weight: 600">@binnie</span> can we please remove Gemini and get Kimi or Qwen in here?</p>
+<p class="pl-crec">Codex&nbsp;✓&nbsp;Stored · Claude&nbsp;✓&nbsp;Stored · DeepSeek&nbsp;✓&nbsp;Stored · Gemini&nbsp;✓&nbsp;Stored</p>
+<p class="pl-ccap"><b>Mentions and reactions.</b> @name one agent, or you, to pull them in. Reactions and receipts wake nobody.</p>
+</div>
+</div>
 </div>
 <div class="pl-demoside">
 <figure class="pl-demofig">
@@ -524,6 +603,22 @@ a:hover { color: #F030A8; }
 </div>
 </details>
 </div>
+<div class="pl-cside">
+<div class="pl-crows">
+<div class="pl-crow">
+<span class="pl-cdot" style="background: #F3EEF8"></span>
+<p class="pl-cwho"><b style="color: #F3EEF8">You</b> → Claude</p>
+<p class="pl-cmsg">Revert it guys. <span style="color: #B48CFF">@Claude</span> lead the work.</p>
+<p class="pl-crec">Claude&nbsp;✓&nbsp;Stored</p>
+<p class="pl-ccap"><b>You're in the same box.</b> Send to everyone or one agent, as a quiet post or with no reply needed. Pause or end the run from the top bar.</p>
+</div>
+</div>
+<div class="pl-ccomp" aria-hidden="true">
+<p>Give the crew a task, ask a question, or share an update…</p>
+<div><span class="pl-cchip"><i></i>To Everyone ▾</span><span class="pl-cchip">Quiet post</span><span class="pl-cchip">No reply needed</span></div>
+</div>
+</div>
+</div>
 </div>
 </section>
 
@@ -539,6 +634,7 @@ a:hover { color: #F030A8; }
 <div class="pl-cmdhead"><span class="pl-cmdlabel">Terminal</span><button class="pl-copy" type="button" aria-label="Copy install command" onClick="{{ copyMain }}">{{ copyLabel.main }}</button></div>
 <code id="pl-cmd-main" class="pl-cmdcode"><span class="pl-cl"><span class="pl-dollar">$ </span>git clone https://github.com/<wbr><span class="{{ repo.cls }}">{{ repo.org }}</span>/{{ repo.name }}.git</span><span class="pl-cl"><span class="pl-dollar">$ </span>cd {{ repo.name }} &amp;&amp; npm link</span></code>
 </div>
+<a class="pl-tlink pl-mobonly" href="#download" style="margin-top: -14px">Or download the .zip ↓</a>
 <ol role="list" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 24px">
 <li class="pl-step">
 <span class="pl-stepn">1</span>
@@ -578,7 +674,7 @@ a:hover { color: #F030A8; }
 </div>
 </div>
 
-<aside class="pl-card pl-dl" style="padding: 26px; display: flex; flex-direction: column; gap: 20px">
+<aside id="download" class="pl-card pl-dl" style="padding: 26px; display: flex; flex-direction: column; gap: 20px">
 <div style="display: flex; align-items: center; gap: 14px">
 <img src="/_blob/78af638265f7676ee638f79302141907" alt="" style="width: 44px; height: 44px; display: block">
 <div>
@@ -683,7 +779,7 @@ Download .zip
 <p style="margin: 0 0 10px; font: 500 12px/1.3 'IBM Plex Mono', monospace; color: #9A8FAD">Join request · cursor · Cursor</p>
 <p style="margin: 0 0 10px; font: 600 26px/1 'IBM Plex Mono', monospace; letter-spacing: .08em; color: #F3EEF8">KQ7M-3XHD</p>
 <p style="margin: 0 0 14px; font: 400 13px/1.5 'IBM Plex Sans', sans-serif; color: #C9BFD8">Check this matches the code in the agent's session, then let it in.</p>
-<div style="display: flex; gap: 8px; justify-content: flex-end"><span class="pl-mbtn" style="border: 1px solid #43375A; color: #9A8FAD">Refuse</span><span class="pl-mbtn" style="border: 1px solid #7A2A63; color: #FF8AD3">Let in</span></div>
+<div style="display: flex; gap: 8px; justify-content: flex-end"><span class="pl-mbtn" style="border: 1px solid #43375A; color: #9A8FAD">Refuse</span><span class="pl-mbtn" style="background: #F3EEF8; color: #0E0A15">Let in</span></div>
 </div>
 </div>
 <div><h3 class="pl-h3">Nothing joins until you let it in</h3><p class="pl-body">A one-paste join shows a pairing code in the agent's session and the same code under Needs you. Matching codes are how you know it's the agent you invited.</p></div>
@@ -757,9 +853,11 @@ Download .zip
 <g class="pl-kick-a"><path d="M8 16h2v7h-2zM22 16h2v7h-2z" fill="#C4633F"></path><path d="M8 23h2v1h-2zM22 23h2v1h-2z" fill="#8A3F24"></path></g>
 <g class="pl-kick-b"><path d="M12 16h2v7h-2zM26 16h2v7h-2z" fill="#C4633F"></path><path d="M12 23h2v1h-2zM26 23h2v1h-2z" fill="#8A3F24"></path></g>
 <g class="pl-wave"><path d="M3 8h3v1h-3zM2 9h1v2h-1zM3 11h3v1h-3z" fill="#8A3F24"></path><path d="M3 9h4v2h-4z" fill="#D97757"></path></g>
-<path d="M30 8h3v1h-3zM30 11h3v1h-3zM33 9h1v2h-1z" fill="#8A3F24"></path>
+<path class="pl-reach-o" d="M30 8h3v1h-3zM30 11h3v1h-3z" fill="#8A3F24"></path>
+<path class="pl-reach-c" d="M33 9h1v2h-1z" fill="#8A3F24"></path>
 <path d="M7 0h22v1h-22zM7 15h22v1h-22zM6 1h1v8h-1zM6 11h1v4h-1zM29 1h1v8h-1zM29 11h1v4h-1z" fill="#8A3F24"></path>
-<path d="M7 1h22v14h-22zM29 9h4v2h-4z" fill="#D97757"></path>
+<path d="M7 1h22v14h-22z" fill="#D97757"></path>
+<path class="pl-reach-i" d="M29 9h4v2h-4z" fill="#D97757"></path>
 <path d="M7 1h22v1h-22zM7 2h1v3h-1z" fill="#E8987A"></path>
 <path d="M7 14h22v1h-22zM28 10h1v4h-1z" fill="#C4633F"></path>
 <g class="pl-blink"><path d="M10 4h2v4h-2zM24 4h2v4h-2z" fill="#141413"></path></g>
@@ -775,14 +873,14 @@ Download .zip
 <g class="pl-wave"><path d="M22 23h2v1h-2zM24 24h1v1h-1zM25 25h1v1h-1zM25 26h1v1h-1zM26 27h1v1h-1zM26 28h1v1h-1zM21 29h1v1h-1zM25 29h1v1h-1zM22 30h3v1h-3z" fill="#10153A"></path><path d="M22 24h2v1h-2zM22 25h3v1h-3z" fill="#7799F2"></path><path d="M22 26h3v1h-3zM22 27h4v1h-4z" fill="#6E90F0"></path><path d="M22 28h3v1h-3z" fill="#5877E8"></path><path d="M25 28h1v1h-1zM22 29h3v1h-3z" fill="#4A63D5"></path></g>
 <path d="M10 0h6v1h-6zM8 1h2v1h-2zM16 1h1v1h-1zM19 1h4v1h-4zM7 2h1v1h-1zM17 2h2v1h-2zM23 2h2v1h-2zM6 3h1v1h-1zM18 3h1v1h-1zM25 3h1v1h-1zM6 4h1v1h-1zM26 4h1v1h-1zM5 5h1v1h-1zM26 5h1v1h-1zM4 6h1v1h-1zM27 6h1v1h-1zM3 7h1v1h-1zM27 7h1v1h-1zM3 8h2v1h-2zM26 8h2v1h-2zM2 9h1v1h-1zM28 9h1v1h-1zM1 10h1v1h-1zM29 10h1v1h-1zM0 11h1v1h-1zM29 11h1v1h-1zM0 12h1v1h-1zM29 12h1v1h-1zM0 13h1v1h-1zM29 13h1v1h-1zM0 14h1v1h-1zM29 14h1v1h-1zM1 15h1v1h-1zM29 15h1v1h-1zM1 16h1v1h-1zM28 16h1v1h-1zM2 17h1v1h-1zM28 17h1v1h-1zM2 18h1v1h-1zM28 18h1v1h-1zM2 19h1v1h-1zM27 19h1v1h-1zM3 20h1v1h-1zM27 20h1v1h-1zM4 21h2v1h-2zM25 21h2v1h-2zM6 22h1v1h-1zM24 22h1v1h-1zM9 23h13v1h-13zM10 24h1v1h-1zM21 24h1v1h-1zM10 25h1v1h-1zM21 25h1v1h-1zM10 26h1v1h-1zM21 26h1v1h-1zM10 27h1v1h-1zM21 27h1v1h-1zM10 28h1v1h-1zM21 28h1v1h-1z" fill="#10153A"></path><path d="M10 1h6v1h-6zM8 2h2v1h-2zM16 2h1v1h-1zM19 2h4v1h-4zM7 3h1v1h-1zM17 3h1v1h-1zM19 3h1v1h-1zM23 3h2v1h-2zM7 4h1v1h-1zM18 4h1v1h-1zM25 4h1v1h-1zM6 5h1v1h-1zM5 6h1v1h-1zM26 6h1v1h-1zM4 7h1v1h-1zM5 8h1v1h-1zM3 9h2v1h-2zM26 9h2v1h-2zM2 10h1v1h-1zM28 10h1v1h-1zM1 11h1v1h-1zM1 12h1v1h-1z" fill="#8AADF4"></path><path d="M10 2h6v1h-6zM8 3h9v1h-9zM20 3h3v1h-3zM8 4h10v1h-10zM19 4h6v1h-6zM7 5h19v1h-19zM6 6h20v1h-20zM5 7h22v1h-22zM11 24h9v1h-9zM11 25h1v1h-1zM11 26h1v1h-1zM11 27h1v1h-1zM11 28h1v1h-1z" fill="#7799F2"></path><path d="M6 8h20v1h-20zM5 9h21v1h-21zM3 10h7v1h-7zM24 10h4v1h-4zM2 11h7v1h-7zM25 11h4v1h-4zM2 12h7v1h-7zM25 12h4v1h-4zM8 13h1v1h-1zM25 13h3v1h-3zM8 14h1v1h-1zM8 15h1v1h-1zM8 16h1v1h-1zM8 17h1v1h-1zM8 18h1v1h-1zM8 19h1v1h-1zM12 25h2v1h-2zM15 25h5v1h-5z" fill="#6E90F0"></path><path d="M10 10h14v1h-14zM9 11h1v1h-1zM24 11h1v1h-1zM9 12h1v1h-1zM24 12h1v1h-1zM9 13h1v1h-1zM24 13h1v1h-1zM9 14h1v1h-1zM24 14h1v1h-1zM9 15h1v1h-1zM24 15h1v1h-1zM9 16h1v1h-1zM24 16h1v1h-1zM9 17h1v1h-1zM24 17h1v1h-1zM9 18h1v1h-1zM24 18h1v1h-1zM9 19h1v1h-1zM24 19h1v1h-1zM10 20h14v1h-14z" fill="#1A2147"></path><path d="M10 11h14v1h-14zM10 12h14v1h-14zM10 13h2v1h-2zM14 13h10v1h-10zM10 14h3v1h-3zM15 14h9v1h-9zM10 15h4v1h-4zM16 15h8v1h-8zM10 16h3v1h-3zM15 16h9v1h-9zM10 17h2v1h-2zM14 17h5v1h-5zM23 17h1v1h-1zM10 18h14v1h-14zM10 19h14v1h-14z" fill="#2B3779"></path><path d="M1 13h7v1h-7zM2 14h6v1h-6zM25 14h3v1h-3zM5 15h3v1h-3zM25 15h3v1h-3zM5 16h3v1h-3zM25 16h2v1h-2zM5 17h3v1h-3zM25 17h2v1h-2zM5 18h3v1h-3zM25 18h2v1h-2zM5 19h3v1h-3zM25 19h1v1h-1zM6 20h4v1h-4zM24 20h1v1h-1zM7 21h17v1h-17zM12 26h3v1h-3zM16 26h1v1h-1zM19 26h1v1h-1zM12 27h2v1h-2zM15 27h5v1h-5zM12 28h8v1h-8z" fill="#5F81EB"></path><path d="M28 13h1v1h-1zM1 14h1v1h-1zM28 14h1v1h-1zM28 15h1v1h-1zM2 16h1v1h-1zM27 16h1v1h-1zM3 17h1v1h-1zM27 17h1v1h-1zM3 18h1v1h-1zM27 18h1v1h-1zM3 19h1v1h-1zM26 19h1v1h-1zM4 20h2v1h-2zM25 20h2v1h-2zM6 21h1v1h-1zM24 21h1v1h-1zM7 22h2v1h-2zM21 22h3v1h-3z" fill="#4A63D5"></path><path d="M2 15h3v1h-3zM3 16h2v1h-2zM4 17h1v1h-1zM4 18h1v1h-1zM4 19h1v1h-1zM9 22h12v1h-12zM20 24h1v1h-1zM20 25h1v1h-1zM20 26h1v1h-1zM20 27h1v1h-1zM20 28h1v1h-1zM11 29h10v1h-10z" fill="#5877E8"></path><path d="M14 25h1v1h-1zM15 26h1v1h-1zM17 26h2v1h-2zM14 27h1v1h-1z" fill="#E4F8FB"></path>
 <g class="pl-blink pl-blink-b"><path d="M12 13h2v1h-2zM13 14h2v1h-2zM14 15h2v1h-2zM13 16h2v1h-2zM12 17h2v1h-2zM19 17h4v1h-4z" fill="#8FEAF2"></path></g>
-<g><path d="M7 23h2v1h-2zM6 24h1v1h-1zM5 25h1v1h-1zM4 26h1v1h-1zM4 27h1v1h-1zM4 28h1v1h-1zM5 29h1v1h-1zM9 29h1v1h-1zM6 30h3v1h-3z" fill="#10153A"></path><path d="M7 24h3v1h-3zM6 25h4v1h-4z" fill="#7799F2"></path><path d="M5 26h5v1h-5zM5 27h5v1h-5z" fill="#6E90F0"></path><path d="M5 28h1v1h-1zM9 28h1v1h-1zM6 29h3v1h-3z" fill="#4A63D5"></path><path d="M6 28h3v1h-3z" fill="#5877E8"></path></g>
+<g class="pl-cta-arm"><path d="M7 23h2v1h-2zM6 24h1v1h-1zM5 25h1v1h-1zM4 26h1v1h-1zM4 27h1v1h-1zM4 28h1v1h-1zM5 29h1v1h-1zM9 29h1v1h-1zM6 30h3v1h-3z" fill="#10153A"></path><path d="M7 24h3v1h-3zM6 25h4v1h-4z" fill="#7799F2"></path><path d="M5 26h5v1h-5zM5 27h5v1h-5z" fill="#6E90F0"></path><path d="M5 28h1v1h-1zM9 28h1v1h-1zM6 29h3v1h-3z" fill="#4A63D5"></path><path d="M6 28h3v1h-3z" fill="#5877E8"></path></g>
 </svg>
 </div>
 </div>
 
 <span class="pl-cta-spark" aria-hidden="true"></span>
-<h2 class="pl-h2" style="max-width: 720px; margin: 0 auto 14px">Stop copy-pasting between agents.</h2>
-<p class="pl-lead" style="max-width: 560px; margin: 0 auto 30px">Put them in one room and let them think together. You'll still have the last word.</p>
+<h2 class="pl-endh"><span>Your agents.</span><span>Your subscriptions.</span><span>Your machine.</span><span style="color: #F030A8">Open source.</span></h2>
+<p class="pl-lead" style="max-width: 560px; margin: 0 auto 30px">Stop copy-pasting between agents. Put them in one room, let them think together, and keep the last word.</p>
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px">
 <a class="pl-btn pl-btn-p" href="#install">Install Peerloom</a>
 <a class="pl-btn pl-btn-s" href="{{ links.zip }}">Download .zip</a>
@@ -812,11 +910,14 @@ Download .zip
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"previewBeat":{"editor":"enum","options":["auto","meet","bump","laptops","weave","finale"],"default":"auto","section":"Scene"},"$preview":{"width":1440,"height":6720}}'>
+<script type="text/x-dc" data-dc-script data-props='{"previewBeat":{"editor":"enum","options":["auto","meet","bump","laptops","weave","finale"],"default":"auto","section":"Scene"},"$preview":{"width":1440,"height":7100}}'>
 class Component extends DCLogic {
   constructor(...args) {
     super(...args);
-    this.state = { p: 0, s: 1, still: false, mobile: false, copied: '', note: '', calm: false };
+    // Start in the phone layout on phones, so the first frame isn't a desktop-sized scene in a narrow column.
+    const mob = typeof window !== 'undefined' && (window.innerWidth || 1440) <= 900;
+    this.state = { p: 0, s: mob ? Math.min(1, window.innerWidth / 448) : 1, still: false, mobile: mob, copied: '', note: '', calm: false };
+    this._mp = 0; this._mt = 0; this._seen = false; this._auto = true; this._vis = false;
   }
 
   componentDidMount() {
@@ -856,6 +957,19 @@ class Component extends DCLogic {
     const root = document.getElementById('top');
     if (root && typeof ResizeObserver !== 'undefined') { this._ro = new ResizeObserver(this._relayout); this._ro.observe(root); }
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(this._relayout, () => {});
+    // Phones: the story card plays its first beat once 60% of it is on screen, then steps through the beats on
+    // its own until the viewer touches the scene or the caption strip.
+    const stage = document.getElementById('pl-stage'), strip = document.getElementById('pl-caps');
+    if (stage && typeof IntersectionObserver !== 'undefined') {
+      this._sio = new IntersectionObserver(entries => entries.forEach(e => {
+        this._vis = e.intersectionRatio >= 0.6;
+        if (this._vis) { this._seen = true; this._req(); if (this._mp === this._mt) this.mrest(); }
+        else clearTimeout(this._hold);
+      }), { threshold: [0, 0.6] });
+      this._sio.observe(stage);
+    } else this._seen = true;
+    this._stopAuto = () => { this._auto = false; clearTimeout(this._hold); };
+    ['touchstart', 'pointerdown', 'wheel', 'keydown'].forEach(ev => [stage, strip].forEach(el => { if (el) el.addEventListener(ev, this._stopAuto, { passive: true }); }));
     this._relayout();
   }
 
@@ -865,8 +979,11 @@ class Component extends DCLogic {
     window.removeEventListener('resize', this._relayout);
     if (this._ro) this._ro.disconnect();
     if (this._io) this._io.disconnect();
+    if (this._sio) this._sio.disconnect();
     if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._mraf) cancelAnimationFrame(this._mraf);
     clearTimeout(this._ct);
+    clearTimeout(this._hold);
   }
 
   // Measured once per layout change, not per scroll frame: the scroll positions at which each caption rests on its beat.
@@ -878,36 +995,44 @@ class Component extends DCLogic {
     const still = vh > 2600 || se.scrollHeight <= vh + 8;
     const root = document.getElementById('top');
     const stage = document.getElementById('pl-stage');
-    // On a phone the scene shows y 56 to 560: the mascots, the bubbles' space and the top of the terminal.
-    const viewH = mobile ? 504 : 700;
     let s = 1;
     if (stage) {
-      const byW = (stage.clientWidth - 8) / 640;
-      const byH = (stage.clientHeight - (mobile ? 16 : 64)) / viewH;
-      s = still ? Math.min(1, byW) : Math.min(1, byW, byH);
-      s = Math.max(0.36, s);
+      // A phone shows the 448px-wide window around the mascots at full width.
+      if (mobile) s = Math.min(1, stage.clientWidth / 448);
+      else {
+        const byW = (stage.clientWidth - 8) / 640;
+        const byH = (stage.clientHeight - 64) / 700;
+        s = still ? Math.min(1, byW) : Math.min(1, byW, byH);
+        s = Math.max(0.36, s);
+      }
     }
-    let anchors = null;
+    let anchors = null, step = 0;
     const caps = [0, 1, 2, 3, 4].map(i => document.getElementById('pl-cap-' + i));
-    if (!still && root && caps.every(Boolean)) {
+    if (mobile) {
+      // Phones read the beat from the caption strip, one card (plus gap) per beat; nothing depends on screen height.
+      if (caps[1] && caps[2]) step = caps[2].offsetLeft - caps[1].offsetLeft;
+    } else if (!still && root && caps.every(Boolean)) {
       const rt = root.getBoundingClientRect().top;
-      const ref = mobile && stage ? (stage.getBoundingClientRect().height + vh) / 2 : (vh + 64) / 2;
-      const rects = caps.map(el => el.getBoundingClientRect());
-      const ys = rects.map(r => r.top - rt + r.height / 2 - ref);
-      // On a phone the story starts while the scene is rising into view (its top 65% down the screen), so the
-      // approach plays as it arrives and the bump lands just after it sticks, with no blank lead-in.
-      const y0 = mobile ? Math.max(0, rects[0].bottom - rt - 0.35 * vh) : Math.max(0, ys[0]);
-      anchors = [y0];
+      const ref = (vh + 64) / 2;
+      const ys = caps.map(el => { const r = el.getBoundingClientRect(); return r.top - rt + r.height / 2 - ref; });
+      anchors = [Math.max(0, ys[0])];
       for (let i = 1; i < 5; i++) anchors.push(Math.max(anchors[i - 1] + 1, ys[i]));
     }
-    return { mobile, still, s, anchors };
+    return { mobile, still, s, anchors, step };
   }
 
   tick() {
     if (!this._lay) this._lay = this.layout();
     const L = this._lay;
     let p = 0;
-    if (L.anchors) {
+    const instant = !!((this.state && this.state.calm) || (this._mq && this._mq.matches));
+    if (L.mobile && !L.still) {
+      // Phones: the strip's resting card sets the target beat, and p tweens to it on a timer.
+      this._mt = (this._seen || instant) ? this.mtarget() : 0;
+      if (instant) this._mp = this._mt;
+      else if (this._mp !== this._mt) this.mrun();
+      p = Math.round(this._mp * 600) / 600;
+    } else if (L.anchors) {
       const root = document.getElementById('top');
       const y = root ? -root.getBoundingClientRect().top : 0;
       const a = L.anchors;
@@ -924,6 +1049,44 @@ class Component extends DCLogic {
     if (p !== st.p || Math.abs(L.s - (st.s || 1)) > 0.002 || L.still !== st.still || L.mobile !== st.mobile) {
       this.setState({ p, s: L.s, still: L.still, mobile: L.mobile });
     }
+  }
+
+  // Phone story: the beat the caption strip is resting on (card 0 is Bump, p .25; card 3 is Your turn, p 1).
+  mtarget() {
+    const strip = document.getElementById('pl-caps'), L = this._lay;
+    if (!strip || !L || !L.step) return 0.25;
+    return (Math.max(0, Math.min(3, Math.round(strip.scrollLeft / L.step))) + 1) / 4;
+  }
+
+  // Tween p toward the target: each beat forwards takes its own time (three times faster when skipping ahead),
+  // and going back takes 450ms a beat.
+  mrun() {
+    if (this._mraf) return;
+    const DUR = [2200, 1700, 2100, 1900];
+    let last = 0;
+    const frame = ts => {
+      this._mraf = 0;
+      const dt = last ? Math.min(64, ts - last) : 16;
+      last = ts;
+      const to = this._mt;
+      let p = this._mp;
+      if ((this.state && this.state.calm) || (this._mq && this._mq.matches)) p = to;
+      else if (p < to) { const b = Math.min(3, Math.floor(p * 4 + 1e-6)); p = Math.min(to, p + (to - p > 0.26 ? 3 : 1) * dt / (4 * DUR[b])); }
+      else p = Math.max(to, p - dt / 1800);
+      this._mp = p;
+      this.setState({ p: Math.round(p * 600) / 600 });
+      if (p !== to) this._mraf = requestAnimationFrame(frame);
+      else this.mrest();
+    };
+    this._mraf = requestAnimationFrame(frame);
+  }
+
+  // At rest: step on to the next beat after a hold, once through, until the viewer touches the story.
+  mrest() {
+    clearTimeout(this._hold);
+    if (!this._auto || !this._vis || (this.state && this.state.calm) || (this._mq && this._mq.matches)) return;
+    if (this._mt >= 1) { this._auto = false; return; }
+    this._hold = setTimeout(() => { if (this._auto && this._vis) this.goTo(Math.round(this._mt * 4) + 1); }, 4200);
   }
 
   copy(key) {
@@ -973,6 +1136,8 @@ class Component extends DCLogic {
     try { if (window.localStorage) localStorage.setItem('pl-calm', calm ? '1' : '0'); } catch (e) {}
     const vid = document.getElementById('pl-demo-video');
     if (calm && vid && !vid.paused) { this._autoPause = true; vid.pause(); }
+    clearTimeout(this._hold);
+    if (this._req) this._req();
   }
 
   // Jump to the scroll position where that caption's beat rests, the same anchor the scene measures.
@@ -980,6 +1145,14 @@ class Component extends DCLogic {
     const reduce = !!(this._mq && this._mq.matches);
     const behavior = reduce ? 'auto' : 'smooth';
     const L = this._lay;
+    if (L && L.mobile && !L.still) {
+      // Phones: scroll the caption strip to that beat's card; Meet rewinds and replays the bump.
+      const strip = document.getElementById('pl-caps');
+      if (!strip) return;
+      if (i === 0) { strip.scrollTo({ left: 0, behavior: 'auto' }); this._mp = 0; this.setState({ p: 0 }); this._req(); return; }
+      strip.scrollTo({ left: (i - 1) * L.step, behavior });
+      return;
+    }
     const root = document.getElementById('top');
     const se = document.scrollingElement || document.documentElement;
     if (L && L.anchors && root && se.scrollHeight > (window.innerHeight || 0) + 8) {
@@ -1064,7 +1237,17 @@ class Component extends DCLogic {
     const drawA = io(seg(0.52, 0.66));
     const drawB = io(seg(0.56, 0.7));
     const burstT = seg(0.195, 0.3);
-    const mk = seg(0.84, 0.95);
+    const mk = seg(0.9, 0.95);
+    // Finale: both threads tighten into short ribbons at their crossing (49% along each, at 320,129, under the
+    // mark's centre) and thicken, then hand over to the mark. Before that, each one draws in from its start.
+    const tie = io(seg(0.84, 0.92));
+    const knot = draw => {
+      if (tie <= 0) return { len: 1, off: 1 - draw };
+      const len = 1 - 0.86 * tie;
+      const c = 0.5 + (0.4906 - 0.5) * tie;
+      return { len, off: -(c - len / 2) };
+    };
+    const kA = knot(drawA), kB = knot(drawB);
     const b1 = seg(0.53, 0.57) * (1 - seg(0.78, 0.82));
     const b2 = seg(0.61, 0.65) * (1 - seg(0.84, 0.88));
     // Claude's right arm: 4 cells at rest, 10 at full reach (3.5px cells), meeting the bot's fist at (327, 279).
@@ -1077,11 +1260,12 @@ class Component extends DCLogic {
       cex: r(1.2 * look), cey: r(0.9 * down), gex: r(-0.6 * look), gey: r(0.35 * down),
       lapO: r(lapT), lapY: r((1 - lapT) * 24, 2), lid: r(lid), glO: r(seg(0.48, 0.56) * 0.9),
       tagO: r(cl(1 - seg(0.48, 0.54) + seg(0.9, 0.97))),
-      dA: r(1 - drawA, 4), dB: r(1 - drawB, 4), oA: drawA > 0 ? 1 : 0, oB: drawB > 0 ? 1 : 0,
-      thrO: r(1 - 0.6 * seg(0.84, 0.94)), pkO: r(seg(0.64, 0.68) * (1 - seg(0.84, 0.88))),
+      dA: r(kA.off, 4), dB: r(kB.off, 4), lenA: r(kA.len, 4), lenB: r(kB.len, 4), sw: r(4 + 6 * tie, 2),
+      oA: drawA > 0 ? 1 : 0, oB: drawB > 0 ? 1 : 0,
+      thrO: r(1 - seg(0.92, 0.95)), pkO: r(seg(0.64, 0.68) * (1 - seg(0.84, 0.88))),
       bS: r(0.4 + 0.9 * io(burstT)), bO: burstT > 0 ? r(1 - seg(0.29, 0.36)) : 0,
       b1O: r(b1), b1Y: r((1 - seg(0.53, 0.57)) * 8, 2), b2O: r(b2), b2Y: r((1 - seg(0.61, 0.65)) * 8, 2),
-      mkO: r(io(mk)), mkS: r(0.6 + 0.4 * back(mk))
+      mkO: r(io(mk)), mkS: r(0.82 + 0.18 * back(mk))
     };
 
     // Terminal lines grow from nothing, so the prompt always sits under the last line printed.
@@ -1092,13 +1276,13 @@ class Component extends DCLogic {
     const labels = ['Meet', 'Bump', 'Unpack', 'Weave', 'Your turn'];
     const knots = labels.map((label, i) => {
       const on = p >= i / 4 - 0.001;
-      return { label, x: i * 25, cur: Math.round(p * 4) === i ? 'step' : 'false', bg: on ? '#F030A8' : '#0E0A15', bd: on ? '#F030A8' : '#43375A', fg: on ? '#F3EEF8' : '#9A8FAD', go: () => this.goTo(i) };
+      return { label, x: i * 25, cur: Math.round(p * 4) === i ? 'step' : 'false', bg: on ? '#F030A8' : '#0E0A15', bd: on ? '#F030A8' : '#43375A', fg: on ? '#F3EEF8' : '#9A8FAD', go: () => { this._auto = false; clearTimeout(this._hold); this.goTo(i); } };
     });
 
     const s = st.s || 1;
-    const crop = st.mobile ? 56 : 0;
-    const viewH = st.mobile ? 504 : 700;
-    const sc = { s: r(s, 4), w: r(640 * s, 1), h: r(viewH * s, 1), oy: r(-crop * s, 1), cls: p > 0.5 && p < 0.88 ? 'pl-typing' : '' };
+    // The scene's visible window: all of it on desktop; on a phone x 96-544 and y 48-418, around the mascots.
+    const C = st.mobile ? { x: 96, y: 48, w: 448, h: 370 } : { x: 0, y: 0, w: 640, h: 700 };
+    const sc = { s: r(s, 4), w: r(C.w * s, 1), h: r(C.h * s, 1), ox: r(-C.x * s, 1), oy: r(-C.y * s, 1), cls: p > 0.5 && p < 0.88 ? 'pl-typing' : '' };
     const R = this.repo();
 
     const label = key => (st.copied === key ? 'Copied ✓' : st.copied === 'x' + key ? 'Selected' : 'Copy');
